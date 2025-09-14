@@ -1,69 +1,89 @@
-# 🩺 Diabetes Prediction App
+# 🏦 Bank Loan Eligibility Prediction App
 
-This is a Streamlit-based web application that uses a Logistic Regression model to predict whether a patient is diabetic or not based on health-related parameters. The app provides prediction results along with model accuracy and confidence level.
-
----
-
-## 📊 Features
-
-- Accepts 8 health-related inputs from the user.
-- Predicts whether the patient is **Diabetic** or **Not Diabetic**.
-- Displays:
-  - Model **accuracy** (trained on real data)
-  - **Prediction confidence** (% likelihood of diabetes)
+This is a **Streamlit web application** that predicts whether a bank loan applicant is eligible for a loan based on their profile.
 
 ---
 
-## 🧾 Input Features
-
-1. **Pregnancies**
-2. **Glucose Level**
-3. **Blood Pressure**
-4. **Skin Thickness**
-5. **Insulin**
-6. **BMI** (Body Mass Index)
-7. **Diabetes Pedigree Function**
-8. **Age**
+## 📌 Features
+- Input applicant details (age, income, employment type, credit score, dependents, etc.).
+- Rule-based eligibility calculation (can be extended to ML model).
+- Displays **prediction result**: Eligible ✅, Borderline ⚠️, or Not Eligible 🚫.
+- Provides **loan improvement suggestions**.
 
 ---
 
-## 📁 Project Structure
-
-diabetes-predictor/
-│
-├── app.py # Streamlit app code
-├── data.csv # Dataset (Pima Indians Diabetes Dataset)
-└── README.md # Project instructions
-
-
----
-
-## ⚙️ Requirements
-
-- Python 3.7+
-- Streamlit
-- Scikit-learn
-- Pandas
-- NumPy
+## 📂 Project Structure
+```
+bank-loan-eligibility-app/
+├── loan_app.py        # Main Streamlit app
+├── requirements.txt   # Dependencies file
+└── README.md          # Project documentation
+```
 
 ---
 
-## 📦 Install Dependencies
+## ⚙️ Installation
 
-Create a virtual environment (optional but recommended):
+1. **Clone the repository** (or copy files locally)
+   ```bash
+   git clone https://github.com/your-username/bank-loan-eligibility-app.git
+   cd bank-loan-eligibility-app
+   ```
 
+2. **Create a virtual environment (optional but recommended)**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## ▶️ Running the App
+
+Run the Streamlit app using:
 ```bash
-python -m venv venv
-source venv/bin/activate      # On Windows: venv\Scripts\activate
-## Install the required dependencies:
-```bash
-pip install -r requirements.txt
+streamlit run loan_app.py
+```
 
-## 🚀 How to Run the App 
-
-Ensure data.csv is present in the same folder as app.py.
-
-Launch the Streamlit app:
-
-Open your browser and go to:
+The app will start locally at:
+```
 http://localhost:8501
+```
+
+---
+
+## 🛠️ Requirements (requirements.txt)
+```
+streamlit
+numpy
+pandas
+Pillow
+```
+
+---
+
+## 📊 Example Inputs
+- **Age:** 30  
+- **Employment:** Salaried  
+- **Monthly Income:** ₹30,000  
+- **Loan Amount:** ₹200,000  
+- **Credit Score:** 700  
+- **Loan Term:** 36 months  
+- **Dependents:** 0  
+
+---
+
+## ✅ Prediction Output
+- **Eligible for Loan**: When applicant has stable income, good credit score, and loan affordability.  
+- **Borderline Eligible**: Medium risk, may need improvements.  
+- **Not Eligible**: High risk, needs better credit score or higher income.  
+
+---
+
+## ⚠️ Disclaimer
+This app is for **educational/demo purposes only** and does not replace real financial eligibility checks.
